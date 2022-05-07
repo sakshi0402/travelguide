@@ -1,0 +1,46 @@
+<%=render "/home/navbar"%>
+<section>
+  <div class="container">
+   <p style="font-size:22px">
+    India is a vibrant land of startling contrasts where both the traditional and modern worlds
+    meet. The world's seventh largest nation by area and the second largest in terms of 
+    population, India boasts a rich heritage that's the result of centuries of different cultures
+    and religions leaving their mark.
+
+    Things to do in India include the opportunity to experience an array of sacred sites and 
+    spiritual encounters, while nature lovers will enjoy its sun-washed beaches, lush national 
+    parks, and exciting wildlife sanctuaries.
+
+    From the magnificent Taj Mahal in Agra to the holy sites of Harmandir Sahib 
+    (formerly the Golden Temple) in Amritsar and the Mecca Masjid mosque in Hyderabad, visitors 
+    to this exotic country will discover a trove of spiritual, cultural, and historical treasures.
+ </p>
+ </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Various Destinations places in india:</h2>
+      <% @destinations=Destination.all%>
+        <% @destinations.each do |destination| %>
+        <div class="row">
+            <div class="col-sm-3">
+            <a href='<%=destinations_path(destination.id)%>' type='button'>
+               <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            </div>
+            <div class="col-sm-8">
+            <font style="color:black">
+                <h4><%= destination.name%>,<%= destination.state%></h4>
+                 
+                 <%= destination.history%>
+                 </font>
+                 <br>
+                 
+                  Explore More
+                 </a>
+            </div>
+            
+        </div>
+        <br>
+      <% end %>
+    </div>
+</section>

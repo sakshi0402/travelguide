@@ -1,0 +1,15 @@
+
+<div style=" float:none; height:400px; margin:10px">
+<H2> Various places in <%=@destination.name%></h2>
+  <% @destination.places.each do |destination| %>
+  <div id="place", style="width: 300; float:left; height:100px; margin:10px">
+    <figure>
+    <a href='<%=placesinfo_path(@destination.id,destination.id)%>' type='button'>
+    <%= image_tag destination.images,style: 'width:300px;height:300px' %>
+    <figcaption> <%= destination.name%></figcaption>
+    </figure>
+    </a>
+    </div>
+  <% end %>
+</div>
+

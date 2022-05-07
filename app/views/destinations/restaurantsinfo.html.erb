@@ -1,0 +1,50 @@
+<%= render 'home/navbar'%>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-md-6 col-12 pb-4">
+            <%=image_tag @restaurant.images ,style:"width:80%"%> 
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                <h4><%= @restaurant.name%>, <%=@destination.name%>
+                </h4>
+                <p>
+                    <div>
+                        <%= @restaurant.description%>
+                    </div>
+                    <div>
+                        <h5> Address:</h5> 
+                        <%= @restaurant.address%>
+                    </div>
+                    <div>
+                        <h5>
+                            For more details, Contact us:
+                        </h5>
+                        <font color='blue'><u>
+                        <%= @restaurant.contact%>
+                        </font>
+                        </u>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+    <h3>Feedbacks:</h3>
+                    <h4></h4> <span></span> <br>
+                    <p> <%@restaurant.restaurantcomments.each do|comment|%> </p>
+                        <%= comment.body%>
+                        <% end%>
+                <form method='post'>
+                        
+                        <h4>Leave a Feedback</h4> 
+                        <textarea name="body" ></textarea>
+                        <input type="hidden" name="username" value=<%= current_user.username%>>
+                        <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

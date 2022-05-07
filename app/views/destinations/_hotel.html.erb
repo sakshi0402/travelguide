@@ -1,0 +1,13 @@
+  
+  <div style="float:none; height:400px; margin:10px">
+  <H2> Various hotels in <%=@destination.name%></h2>
+  <% @destination.hotels.each_with_index do |hotel, index| %>
+  <div style="float:<%= index == 0 ? 'none' : 'left' %>" >
+    <figure>
+    <a href='<%=hotelsinfo_path(@destination.id,hotel.id)%>' type='button'>
+    <%= image_tag hotel.images,style: 'width:300px;height:300px' %>
+    <figcaption> <%= hotel.name%></figcaption></a>
+    </figure>
+    </div>
+  <% end %>
+  </div>

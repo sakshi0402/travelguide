@@ -1,0 +1,119 @@
+<%= render "navbar"%>
+<section>
+  <div class='conatiner'>
+
+    <div class="row">
+                <div class="col-sm-5 col-md-6 col-12 pb-4">
+
+                    <%=render "/destinations/carousel"%>
+                </div>
+                <div class='col-sm-5'>
+                    Indian Tourism is the rapid growing industry. 
+                    India is a country which has several unique temples famous for its cultural heritage, 
+                    various wildlife sanctuaries and it is surrounded by Indian Ocean, Himalayas, 
+                    Bay of Bengal and Arabian Sea. It’s a Multilingual Country where people speak different 
+                    languages. 
+                    Every foreigner has a dream to visit this fascinating country. 
+                    It has many tourist attractions like waterfalls, Deserts, Famous river bodies like Ganga,
+                    Yamuna, and Indus etc.
+
+                    India Tourism Campaign was promoted by many Indian Celebrities and its tagline 
+                    is “Atithi Devo Bhava” which means honoring the guest as God. This happens only in India.
+                    Whenever a guest enters in India, it’s our prime duty to treat them with respect and 
+                    provide best services. Indians treat their foreign guests with enthusiasm. 
+                    India Tourism is today one of the largest service industry. 
+                    Its campaign “Incredible India” was developed by Ministry of Tourism. 
+                    This industry is based on certain standards which are: Safai(Cleanliness), 
+                    Surakshaa(Security), Sahyog(Cooperation), Suchna(Information), Sanrachna(Infrastructure), 
+                    Swagat(Welcome), and Suvidha(Facilitation).
+
+                </div>
+    </div>
+  </div>
+</section>
+
+<section>
+   <hr class="my-5">
+    <div class="card card-image"
+      style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+      <div class="text-white text-center py-5 px-4 my-5">
+        <div>
+          <h1 class="card-title h1-responsive pt-3 mb-5 font-bold">
+          <strong>Travel Destinations in India</strong></h1> 
+              <section>
+                <div class="container">
+                      <div class="row">
+                          <div class="col-sm-6">
+                        
+                        India is the home to numerous attractions, amenities, activities and beauties. 
+                        It is not hard to believe that a land as diverse as India has a long list of travel
+                      destinations within its border. Starting from the valleys of Kashmir to the 
+                      tri-colored sea of Kanyakumari, you will find numerous tourist attractions, 
+                      which would suit your taste. If you were visiting India in winter, Rajasthan, Delhi,
+                      Maharashtra, Tamil Nadu, Kerala, Chandigarh, Karnataka, Goa and other places would 
+                      beauties in the top choice. If you choose to visit India in the monsoon, Uttarakhand, Munnar,
+                      Kodaikanal, Lahaul, Mussorie, Cherrapunji and Coorg are some of the places to choose.
+                      <br>
+                        <a href="/destinations/home"><i class="fa fa-clone left"></i> View More</a>
+                          </div>
+                          <div class="col-sm-6">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height=100,width=100" >
+                                  <div class="carousel-inner"  >
+                                     <% Place.all.each_with_index do |image_destination, index| %>
+                                      <div class="<%= index == 0 ? 'item active' : 'item' %>" >
+                                        <%= image_tag image_destination.images, style: 'width:700px;height:220px'%>
+                                       </div>
+                                     <% end %>
+                                  </div>       
+                              </div>
+                          </div>
+                        </div>
+                        <br>
+                  </div>
+              </section>
+        </div>
+       </div>
+    </div>
+</section> 
+<br>
+<section style="background-color:pink">
+
+  <div class="container" >
+    <div class="row">
+    <BR>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+       <% @a=Destination.first%>
+       <%= image_tag @a.images ,style: 'width:200px;height:200px'%>
+       <br>
+       <%= @a.name%>
+      </div>
+      <div class="col-sm-3">
+       <% @a=Place.first%>
+       <%= image_tag @a.images ,style: 'width:200px;height:200px'%>
+       <br>
+       <%= @a.name%>
+      </div>
+      <div class="col-sm-3">
+       <% @a=Hotel.first%>
+       <%= image_tag @a.images ,style: 'width:200px;height:200px'%>
+       <br>
+       <%= @a.name%>
+      </div>
+      <div class="col-sm-3">
+       <% @a=Restaurant.first%>
+       <%= image_tag @a.images ,style: 'width:200px;height:200px'%>
+       <br>
+       <%= @a.name%>
+      </div>
+    </div>
+    <br>
+    <div class="row" >
+       <center>
+       <a  class="btn btn-primary" href='home/photos' > View More Photos </a>
+       </center>
+    </div>
+    <br>
+  </div>
+</section>

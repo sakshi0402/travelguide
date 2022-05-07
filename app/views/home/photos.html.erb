@@ -1,0 +1,55 @@
+<%= render 'home/navbar'%>
+<section>
+     <div class="container">
+        <div class="row">
+            <h1> Different Destinations </h1>
+            <% Destination.all.each do |destination|%>
+            <div class="col-sm-3">
+            <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            <br>
+            <%= destination.name%>
+            </div>
+            <%end%>
+            </div>
+
+         <br>
+
+         <div class="row">
+            <h1> Different Places </h1>
+            <% Place.all.each do |destination|%>
+            <div class="col-sm-3">
+            <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            <br>
+            <%= destination.name%>
+            </div>
+            <%end%>
+            </div>
+        <br>
+
+         <div class="row">
+            <h1> Different Hotels </h1>
+            <% Hotel.all.each do |destination|%>
+            <div class="col-sm-3">
+            <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            <br>
+            <%= destination.name%>
+            </div>
+            <%end%>
+            </div>
+       <br>
+
+         <div class="row">
+            <h1> Different Restaurants </h1>
+            <% Restaurant.all.each do |destination|%>
+            <div class="col-sm-3">
+            <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            <br>
+            <%= destination.name%>
+            </div>
+            <%end%>
+            </div>
+        <br>
+        </div>
+
+     </div>
+</section>

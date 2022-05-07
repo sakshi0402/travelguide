@@ -1,0 +1,18 @@
+<%= render '/home/navbar'%>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <%=image_tag @destination.images,style:'width:200px;height:200px'%>
+            </div>
+            <div class="col-sm-5">
+               <p>
+                <%= @destination.history%>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<%= render 'destinations/place'%>
+<%= render 'destinations/hotel'%>
+<%= render 'destinations/restaurant'%>

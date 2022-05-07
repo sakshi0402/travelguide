@@ -1,0 +1,13 @@
+ 
+  <div style="float:none; height:250px;margin:10px">
+   <H2> Various restaurants in <%=@destination.name%></h2>
+  <% @destination.restaurants.each_with_index do |restaurant, index| %>
+  <div style="float:<%= index == 0 ? 'none' : 'left' %>" >
+    <figure>
+    <a href='<%=restaurantsinfo_path(@destination.id,restaurant.id)%>' type='button'>
+    <%= image_tag restaurant.images,style: 'width:300px;height:300px' %>
+    <figcaption> <%= restaurant.name%></figcaption></a>
+    </figure>
+    </div>
+  <% end %>
+</div>
