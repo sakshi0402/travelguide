@@ -1,0 +1,23 @@
+<%= render "navbar"%>
+<div style=" float:none; height:400px; margin:10px">
+<H2> Different Places to Visit in India </h2>
+  <% @places=Place.all%>
+   <% @places.each do |destination| %>
+        <div class="row">
+            <div class="col-sm-2">
+            
+               <%= image_tag destination.images,style:'width:200px;height:200px'%>
+            </div>
+            <div class="col-sm-8">
+            <font style="color:black">
+                <h4><%= destination.name%></h4>
+                 
+                 <%= destination.description%>
+                 </font>
+            </div>
+            
+        </div>
+        <br>
+      <% end %>
+</div>
+

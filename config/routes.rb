@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'destinations/home'
   get 'home/index'
+  get 'home/places'
   get 'home/photos'
   get "destinations/:destination_id/view", to:"destinations#view",as:"destinations"
   get "destinations/:id/place", to:"destinations#place",as:"places"
