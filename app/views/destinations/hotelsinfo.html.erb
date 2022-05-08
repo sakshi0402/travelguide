@@ -38,11 +38,8 @@
                 <form method='post'>
                         <h4>Leave a Feedback</h4> 
                         <textarea name="body" ></textarea>
-                        <%if current_user.username.present?%>
-                        <input type="hidden" name="username" value="<%= current_user.username%>">
-                        <input type="submit" value="Submit">
-                        <%else%> <%= flash[:alert] = "Please login to continue.."%>
-                         <%end%>
+                        <input type="hidden" name="username" <% if user_signed_in? %>value="<%= current_user.username%>"<% end%>>
+                        <input type="submit" value="Submit"> 
                 </form>
             </div>
         </div>

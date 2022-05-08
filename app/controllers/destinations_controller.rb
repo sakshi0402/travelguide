@@ -1,4 +1,5 @@
 class DestinationsController < ApplicationController
+    
     def view
         @destination = Destination.find(params[:destination_id])
     end

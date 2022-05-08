@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: %i[ show edit update destroy ]
-
+  
   # GET /experiences or /experiences.json
   def index
     @experiences = Experience.all

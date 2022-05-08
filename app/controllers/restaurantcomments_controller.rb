@@ -1,4 +1,5 @@
 class RestaurantcommentsController < ApplicationController
+  
     def create
         if user_signed_in? 
                 @restaurant=Restaurant.find(params[:destination_id])
